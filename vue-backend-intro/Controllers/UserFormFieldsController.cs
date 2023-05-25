@@ -20,21 +20,18 @@ namespace vue_backend_intro.Controllers
                 label= "First Name",
                 type = "text",
                 value = "",
-                placeholder = "Enter your first namespace"
+                placeholder = "Enter your first name"
             };
             var fieldItem2 = new {
                 label= "Last Name",
                 type = "text",
                 value = "",
-                placeholder = "Enter your first namespace"
+                placeholder = "Enter your last name"
             };
             var fields = new [] { new { fieldItems = new [] {
                 fieldItem1,
                 fieldItem2
             } } }; 
-            // [0].fieldItems[0].label
-            
-             
             return Ok(fields);         
         }
     }

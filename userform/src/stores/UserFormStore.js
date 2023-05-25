@@ -20,9 +20,7 @@ export const useUserFormStore = defineStore('userFormStore', {
             try {
                 await axios.get('http://localhost:5217/UserFormFields').then((response) => {
                     const myArray = [...response.data];
-                    // console.log(...myArray[0].fieldItems);
                     this.userFormItems.push(...myArray[0].fieldItems);
-                    // console.log(this.userFormItems);
                     
                 });
             } catch (error) {
@@ -30,7 +28,6 @@ export const useUserFormStore = defineStore('userFormStore', {
             } finally {
                 this.loading = false;
             }
-            // console.log(this.userFormItems);
         }        
      }
 });
