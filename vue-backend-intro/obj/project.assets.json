@@ -465,11 +465,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/davidoster/source/repos/davidoster/vue-backend-intro/vue-backend-intro.csproj",
+      "projectUniqueName": "/Users/davidoster/source/repos/davidoster/vue-demo-userform/vue-backend-intro/vue-backend-intro.csproj",
       "projectName": "vue-backend-intro",
-      "projectPath": "/Users/davidoster/source/repos/davidoster/vue-backend-intro/vue-backend-intro.csproj",
+      "projectPath": "/Users/davidoster/source/repos/davidoster/vue-demo-userform/vue-backend-intro/vue-backend-intro.csproj",
       "packagesPath": "/Users/davidoster/.nuget/packages/",
-      "outputPath": "/Users/davidoster/source/repos/davidoster/vue-backend-intro/obj/",
+      "outputPath": "/Users/davidoster/source/repos/davidoster/vue-demo-userform/vue-backend-intro/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/davidoster/.nuget/NuGet/NuGet.Config"

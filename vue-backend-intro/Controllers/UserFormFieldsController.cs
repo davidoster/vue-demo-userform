@@ -23,7 +23,7 @@ namespace vue_backend_intro.Controllers
                 placeholder = "Enter your first namespace"
             };
             var fieldItem2 = new {
-                label= "First Name",
+                label= "Last Name",
                 type = "text",
                 value = "",
                 placeholder = "Enter your first namespace"

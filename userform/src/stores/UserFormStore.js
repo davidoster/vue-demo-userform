@@ -1,25 +1,36 @@
-// import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import axios from 'axios';
 import { defineStore } from 'pinia'
 
 
 export const useUserFormStore = defineStore('userFormStore', {
-     state: () =>   { 
-                        return { count: 0, userFormItems: [] }
-                    },
+     state: () =>   ({ 
+                        count: ref(0), 
+                        userFormItems: computed(() => []),
+                        loading: false,
+                        error: null
+                    }),
      actions: {
         increment(){
             this.count++;
         },
-        fillFormItems(){
-            axios.get('http://localhost:5217/UserFormFields').then((response) => {
-                const myArray = [...response.data];
-                this.userFormItems.push(myArray[0].fieldItems);
-                console.log(this.userFormItems[0][1].label);
-                
-            });
+        async fillFormItems(){
+            this.userFormItems = computed(() => []);
+            this.loading = true;
+            try {
+                await axios.get('http://localhost:5217/UserFormFields').then((response) => {
+                    const myArray = [...response.data];
+                    // console.log(...myArray[0].fieldItems);
+                    this.userFormItems.push(...myArray[0].fieldItems);
+                    // console.log(this.userFormItems);
+                    
+                });
+            } catch (error) {
+                console.log(error);
+            } finally {
+                this.loading = false;
+            }
             // console.log(this.userFormItems);
-        }
-        
+        }        
      }
 });

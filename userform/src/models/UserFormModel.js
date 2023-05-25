@@ -10,9 +10,9 @@ export default class UserForm extends Model {
     return {
         // userform structure
         // firstName, lastName
+      id: this.uid(),
       firstName: { label: this.string(), type: this.string(), value: this.string(), placeholder: this.string() }, 
       lastName: { label: this.string(), type: this.string(), value: this.string(), placeholder: this.string() }, 
-    //   id: this.uid(),
     //   name: this.string(''),
     //   email: this.string('')
     }
