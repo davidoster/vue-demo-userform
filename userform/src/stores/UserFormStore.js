@@ -21,7 +21,6 @@ export const useUserFormStore = defineStore('userFormStore', {
                 await axios.get('http://localhost:5217/UserFormFields').then((response) => {
                     const myArray = [...response.data];
                     this.userFormItems.push(...myArray[0].fieldItems);
-                    
                 });
             } catch (error) {
                 console.log(error);

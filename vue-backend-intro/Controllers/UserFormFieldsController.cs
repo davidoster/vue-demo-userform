@@ -17,20 +17,27 @@ namespace vue_backend_intro.Controllers
         public IActionResult Index()
         {
             var fieldItem1 = new {
-                label= "First Name",
+                label = "First Name",
                 type = "text",
                 value = "",
                 placeholder = "Enter your first name"
             };
             var fieldItem2 = new {
-                label= "Last Name",
+                label = "Last Name",
                 type = "text",
                 value = "",
                 placeholder = "Enter your last name"
             };
+            var fieldItem3 = new {
+                label = "Email",
+                type = "text",
+                value = "",
+                placeholder = "Enter your email"
+            };
             var fields = new [] { new { fieldItems = new [] {
                 fieldItem1,
-                fieldItem2
+                fieldItem2,
+                fieldItem3
             } } }; 
             return Ok(fields);         
         }

@@ -11,7 +11,7 @@
     console.log(store.userFormItems);
     console.log('userForms:');
     console.log(userFormsRepo.all());
-    console.log(userFormsRepo.find(1));
+    // console.log(userFormsRepo.find(1));
 </script>
 
 <template>
@@ -25,6 +25,10 @@
             </p>
             <p>
                 {{ store.userFormItems[1].label }}
+                <input type="text" name="" id="">
+            </p>
+            <p>
+                {{ store.userFormItems[2].label }}
                 <input type="text" name="" id="">
             </p>
         </div>
