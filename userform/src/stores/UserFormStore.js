@@ -15,13 +15,21 @@ export const useUserFormStore = defineStore('userFormStore', {
             this.count++;
         },
         async fillFormItems(){
-            this.userFormItems = computed(() => []);
+            this.userFormItems = computed(() => []); // clear the array
             this.loading = true;
             try {
-                await axios.get('http://localhost:5217/UserFormFields').then((response) => {
-                    const myArray = [...response.data];
-                    this.userFormItems.push(...myArray[0].fieldItems);
-                });
+                const response = await axios.get('http://localhost:5217/UserFormFields');
+                const myArray = [...response.data];
+                console.log('here');
+                // console.log(...myArray[0].fieldItems);
+                const [fieldItem1, ...rest] = [...myArray[0].fieldItems];
+                console.log(fieldItem1, rest);
+                this.userFormItems.push(...myArray[0].fieldItems);
+                this.userFormItems.push(myArray[0].buttonItem);
+                // .then((response) => {
+                //     const myArray = [...response.data];
+                //     this.userFormItems.push(...myArray[0].fieldItems);
+                // });
             } catch (error) {
                 console.log(error);
             } finally {

@@ -34,11 +34,23 @@ namespace vue_backend_intro.Controllers
                 value = "",
                 placeholder = "Enter your email"
             };
-            var fields = new [] { new { fieldItems = new [] {
-                fieldItem1,
-                fieldItem2,
-                fieldItem3
-            } } }; 
+            var button = new {
+                value = "New User",
+                type = "submit",
+                action = ""
+            };
+            var fields = new [] 
+            { 
+                new { 
+                        fieldItems = new [] 
+                        {
+                            fieldItem1,
+                            fieldItem2,
+                            fieldItem3
+                        },
+                        buttonItem = button 
+                } 
+            }; 
             return Ok(fields);         
         }
     }
