@@ -26,7 +26,10 @@
             });
         store.userFormValues = values;
         console.log(store.userFormValues);
-        store.saveFormValues(store.userFormValues);
+
+        // store.saveFormValues(store.userFormValues);
+        store.saveFormValues(userFormsRepo.all());
+        
         userFormsRepo.save({
             name: document.getElementById('1').name,
             value: document.getElementById('1').value,
