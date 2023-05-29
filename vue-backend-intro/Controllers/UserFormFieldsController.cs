@@ -39,7 +39,8 @@ namespace vue_backend_intro.Controllers
                 type = "submit",
                 action = ""
             };
-            var fields = new [] 
+            var fields = 
+            new [] 
             { 
                 new { 
                         fieldItems = new [] 

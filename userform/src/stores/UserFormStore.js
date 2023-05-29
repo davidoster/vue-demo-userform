@@ -6,7 +6,8 @@ import { defineStore } from 'pinia'
 export const useUserFormStore = defineStore('userFormStore', {
      state: () =>   ({ 
                         count: ref(0), 
-                        userFormItems: computed(() => []),
+                        userFormItems: computed(() => []), // metadata
+                        userFormValues: [], // data
                         loading: false,
                         error: null
                     }),
@@ -20,10 +21,10 @@ export const useUserFormStore = defineStore('userFormStore', {
             try {
                 const response = await axios.get('http://localhost:5217/UserFormFields');
                 const myArray = [...response.data];
-                console.log('here');
+                // console.log('here');
                 // console.log(...myArray[0].fieldItems);
-                const [fieldItem1, ...rest] = [...myArray[0].fieldItems];
-                console.log(fieldItem1, rest);
+                // const [fieldItem1, ...rest] = [...myArray[0].fieldItems];
+                // console.log(fieldItem1, rest);
                 this.userFormItems.push(...myArray[0].fieldItems);
                 this.userFormItems.push(myArray[0].buttonItem);
                 // .then((response) => {
@@ -35,6 +36,16 @@ export const useUserFormStore = defineStore('userFormStore', {
             } finally {
                 this.loading = false;
             }
-        }        
+        },    
+        async saveFormValues(values){
+            try {
+                const response = await axios.post('http://localhost:5217/UserFormFields', values);
+                console.log(response);
+            } catch (error) {
+                console.log(error);
+            } finally {
+                console.log('finally');
+            }
+        }    
      }
 });
